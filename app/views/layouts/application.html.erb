@@ -9,6 +9,7 @@
   </head>
 
   <body>
+  	<%= render 'layouts/header' if !current_user.nil?%>
     <%= yield %>
   </body>
 </html>
