@@ -1,0 +1,3 @@
+<% @users.each do |user| %>
+	<%= link_to "#{user.firstname} #{user.lastname}", user %> | <%= link_to "Add Friend", "#" %><p>
+<% end %>
