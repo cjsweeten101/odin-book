@@ -1,9 +1,12 @@
 name:  <%= @user.firstname %> <%= @user.lastname %>
 <p>
 Friends:<p>
+<% @user.friends.each do |user| %>
+	<%= link_to "#{user.firstname} #{user.lastname}", user%><p>
+<% end %>
 
 Pending Friends:<p>
 
 <% @user.pending_friends.each do |user| %>
-	<%= link_to "#{user.firstname} #{user.lastname}", user%>
+	<%= link_to "#{user.firstname} #{user.lastname}", user%><p>
 <% end %>
