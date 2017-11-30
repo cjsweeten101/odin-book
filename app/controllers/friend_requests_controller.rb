@@ -14,7 +14,7 @@ class FriendRequestsController < ApplicationController
 		if request.save
 			flash['success'] = "Friend request sent!"
 		else
-			flash['failure'] = "Something went wrong :/"
+			flash['failure'] = "Cannot Friend that user"
 		end
 		redirect_to users_path
 	end
