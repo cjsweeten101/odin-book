@@ -2,7 +2,8 @@ name:  <%= @user.firstname %> <%= @user.lastname %>
 <p>
 Friends:<p>
 <% @user.friends.each do |user| %>
-	<%= link_to "#{user.firstname} #{user.lastname}", user%><p>
+	<%= link_to "#{user.firstname} #{user.lastname}", user%> | 
+	<%= link_to "Remove", friendship_path(user.id), method: :delete %><p>
 <% end %>
 
 Pending Friends:<p>
