@@ -1,0 +1,5 @@
+Pending Requests: <p>
+	
+<% current_user.pending_requests.each do |user| %>
+	<%= user.firstname %> <%= user.lastname %> | <%= link_to "Accept", "#" %> |  <%= link_to "Delete", friend_request_path(user.id), method: :delete %>
+<% end %>
