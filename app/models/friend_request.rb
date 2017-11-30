@@ -8,6 +8,6 @@ class FriendRequest < ApplicationRecord
 	private
 
 	def can_not_friend_self
-		@errors.add(:base, "Can't send friend request to yourself. . .") if self.user = self.friend
+		@errors.add(:base, "Can't send friend request to yourself. . .") if self.user == self.friend
 	end
 end
