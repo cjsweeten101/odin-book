@@ -1,7 +1,7 @@
 <% @users.each do |user| %>
 	<% unless current_user == user %>
 		<%= link_to "#{user.firstname} #{user.lastname}", user %> 
-		<% unless current_user.friends.include? user %>
+		<% unless (current_user.friends.include? user) || (FriendRequest.exists?(["user_id = ? OR friend_id = ?", user.id, user.id])) %>
 			 | <%= link_to "Add Friend", new_friend_request_path(id: user.id) %>
 		<% end %>
 		<p>
